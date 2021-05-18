@@ -19,7 +19,7 @@
 require('dbConnect.php');
 
 //query to fetch
-$sql = "SELECT * FROM `students`";
+$sql = "SELECT * FROM `students` ORDER BY name DESC";
 //excute the query
 
 $result = mysqli_query($conn,$sql);
@@ -60,6 +60,14 @@ $numrows = mysqli_num_rows($result);
             echo "<td>".$row['phone']."</td>";
             echo "<td>".$row['email']."</td>";
             echo "<td>".$row['admission_number']."</td>";
+            $adm = $row['admission_number'];
+            echo "<td>
+            <a href='updatestudent.php?adm=$adm' class='btn btn-primary'>Update</a>
+            <form method='POST' action='deleteStudent.php' style='margin-top:5px;'>
+            <input type='hidden' name='adm' value='$adm'/>
+            <button type='' name='submit' class='btn btn-danger'>DELETE</button>
+            </form>
+            </td>";
         echo "</tr>";
       }
 
