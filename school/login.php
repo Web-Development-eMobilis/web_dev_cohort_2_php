@@ -36,6 +36,9 @@
             <button type="submit" name="login" class="btn btn-primary">Login</button>
 
             <p>
+            Forgot Password ? <a href="resetpassword.php">Reset</a> Now
+            </p>
+            <p>
             Don't have an account? <a href="register.php">Register</a> Now
             </p>
             </form>
@@ -91,6 +94,7 @@
                             //set values
                             $_SESSION['name']=$row['full_name'];
                             $_SESSION['id']=$row['id'];
+                            $_SESSION['role']=$row['role'];
                         }else{
                             output("Oops! Invalid email or password.Try again");
                         }

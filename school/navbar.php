@@ -27,6 +27,10 @@ if(isset($_SESSION['name'])){
         <li class="nav-item">
           <a class="nav-link" href="addstudent.php">Add Students</a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="showusers.php">System Users</a>
+        </li>
        
         <li class="nav-item disabled">
           

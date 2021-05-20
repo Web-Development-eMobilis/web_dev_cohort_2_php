@@ -10,6 +10,10 @@
 <body>
 <?php
     include('navbar.php');
+    if($_SESSION['role']!='admin'){
+        //denied
+        header('location:accessdenied.php');
+    }
 ?>
 
 <div class="container">
